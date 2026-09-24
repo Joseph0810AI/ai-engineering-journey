@@ -332,3 +332,37 @@ elif m_sal<25000:
     print("Loan elgible salary atleast 25k per month")
 else:
     print("Loan eligible credit score atleast 700")
+
+'''
+17. Exam Eligibility
+
+Ask for:
+
+Attendance percentage
+Internal marks
+
+Rules:
+
+Attendance must be at least 75%.
+Internal marks must be at least 40.
+
+If both conditions are satisfied:
+
+Eligible for exam
+
+Otherwise, display the reason.
+
+
+'''
+
+att_per = float(input("Enter the attendance Percentage: "))
+int_mark = float(input("Enter the internal marks"))
+
+if att_per >= 75 and int_mark >= 40:
+    print("Eligible for exam")
+elif att_per < 75 and int_mark < 40:
+    print("Both attendance per and internal marks are not enough to qualify the exam")
+elif att_per >=75 and int_mark < 40:
+    print("Internal mark is not enugh")
+else:
+    print("Attendance is not enough")
