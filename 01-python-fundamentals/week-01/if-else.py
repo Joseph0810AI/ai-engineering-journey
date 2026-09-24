@@ -129,7 +129,7 @@ yellow
 green
 '''
 
-signal_colr = str(input("Enter the signal colr: "))
+signal_colr = str(input("Enter the signal colr: ")).strip().lower()
 
 if signal_colr == 'red':
     print("Stop")
@@ -259,7 +259,7 @@ Username wrong → "User not found"
 user_name = 'mypython'
 pwd = 'Python123'
 
-u_name = input("Enter the username: ")
+u_name = input("Enter the username: ").strip().lower()
 pwd1 = input("Enter the pwd: ")
 
 if user_name == u_name and pwd == pwd1:
@@ -366,3 +366,120 @@ elif att_per >=75 and int_mark < 40:
     print("Internal mark is not enugh")
 else:
     print("Attendance is not enough")
+"""
+
+18. Online Shopping
+
+Ask for:
+
+Product price
+Membership status (yes/no)
+
+Rules:
+
+Members get 20% discount if purchase is ₹2,000 or more.
+Members get 10% discount otherwise.
+Non-members get 5% discount if purchase is ₹3,000 or more.
+Otherwise, no discount.
+
+Calculate the final price.
+
+"""
+p_price = float(input("Enter the product price: "))
+m_status = input("Select Membership stats yes or no: ").strip().lower()
+
+if m_status == 'yes' and p_price >= 2000:
+    discount = p_price *.20
+    print("20% discount")
+elif m_status == 'yes' and p_price < 2000:
+    discount = p_price *.10
+    print("10% discount")
+elif m_status == 'no' and p_price >=3000:
+    discount = p_price *.05
+    print("5% discount")
+else:
+    discount = 0
+    print("no discount", p_price)
+
+final_price = p_price - discount
+print("Final Price", final_price)
+
+19. Driving Eligibility
+
+Ask for:
+
+Age
+Whether the person has a learner's license (yes/no)
+
+Rules:
+
+Below 18 → "Not eligible"
+18 or above + license → "Eligible to drive"
+18 or above + no license → "Get a learner's license first"
+
+'''
+
+age = int(input("Enter your age: "))
+llr = input("Do you have LLR yes/no: ").strip().lower()
+
+if age <18:
+    print("Not Eligble")
+elif age >=18 and llr == 'yes':
+    print("Elgible to drive")
+else:
+    print("Get a learner's license first")
+
+20. Restaurant Billing
+
+Ask for:
+
+Total bill
+Number of people
+
+Rules:
+
+If bill is above ₹5,000, apply 10% discount.
+If there are 5 or more people, apply an additional 5% discount.
+Display the final bill and amount each person should pay.
+
+'''
+
+total_bill = float(input("Enter your total bill: "))
+num_ppl = int(input("Enter the no.of people: "))
+
+if total_bill > 5000 and num_ppl <5:
+    discount = total_bill * .10 
+    print("10% discount")
+elif total_bill > 5000 and num_ppl >=5:
+    discount = total_bill * .15
+    print("Additional 5% discount")
+
+final_bill = total_bill - discount
+avg_bill = final_bill/num_ppl
+
+print("Final Bill", final_bill)
+print("Avg bill per person", avg_bill)
+
+
+'''
+
+21. Leap Year
+
+Ask the user for a year.
+
+Determine whether it is a leap year using:
+
+A year is a leap year if:
+- divisible by 400
+OR
+- divisible by 4 but not divisible by 100
+
+'''
+
+yr = int(input("Enter the year: "))
+
+if yr % 400 == 0 or (yr % 4 == 0 and  yr%100 != 0):
+    print("leap year")
+else:
+    print("no leap year")
+    
