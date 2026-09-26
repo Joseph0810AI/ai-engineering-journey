@@ -482,4 +482,67 @@ if yr % 400 == 0 or (yr % 4 == 0 and  yr%100 != 0):
     print("leap year")
 else:
     print("no leap year")
+
+'''
+
+22. Triangle Validator
+
+Ask for three side lengths.
+
+Determine:
+
+Whether the sides can form a triangle.
+If they can, determine whether it is:
+Equilateral
+Isosceles
+Scalene
+
+'''
+
+s_1 = int(input("Enter the value of side1: "))
+s_2 = int(input("Enter the value of side2: "))
+s_3 = int(input("Enter the value of side3: "))
+
+if s_1 == s_2 == s_3:
+    print("The sides can form Equilateral")
+elif s_1 == s_2 or s_2 == s_3 or s_1 == s_3:
+    print("The sides can form Isosceles")
+else:
+    print("The sides can form scalene")
+
+'''
+
+23. Salary Calculator
+
+Ask for an employee's salary.
+
+Calculate tax:
+
+Salary ≤ ₹2,50,000 → No tax
+₹2,50,001–₹5,00,000 → 5%
+₹5,00,001–₹10,00,000 → 20%
+Above ₹10,00,000 → 30%
+
+Display the tax and final salary.
+
+'''
+
+salary = int(input("Enter your salary: "))
+
+if salary <= 250000:
+    tax = 0
+    print("0% tax", tax)
+elif salary > 250000 and salary < 500000:
+    tax = salary *.05
+    print("5% tax", tax)
+elif salary > 500000 and salary < 1000000:
+    tax = salary *.20
+    print("20% tax", tax)
+else:
+    tax = salary *.30
+    print("30% salary", tax)
+
+final_salary = salary - tax
+
+print("Final salary",final_salary)
     
